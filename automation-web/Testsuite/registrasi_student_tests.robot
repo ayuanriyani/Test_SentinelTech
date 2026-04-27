@@ -1,19 +1,17 @@
 *** Settings ***
 Library            SeleniumLibrary
+Resource           ../Resources/resources.robot
 Resource           ../PageObject/Registrasi/registrasi_student_page.robot
 Test Teardown      Close Browser
 
 *** Variables ***
-${BASE_URL}    https://demoqa.com
-${BROWSER}     CHROME
 ${PATH}        automation-practice-form
-
 
 
 *** Test Cases ***
 User Student can be successfully created in registration Form
     [Documentation]    TC-001    User successully created in registration form
-    [Tags]    Registrasi    Regression    Poitive
+    [Tags]    Registrasi    Regression    Positive
     GIVEN User Go To Automation Form
     AND registrasi_student_page.Input Nama Student  Ayu  
     AND registrasi_student_page.Input Last Nama Student    Anriyani    
