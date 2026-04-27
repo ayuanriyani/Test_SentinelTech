@@ -1,34 +1,51 @@
-# AUTOMATION TESTING - ROBOT FRAMEWORK 
-### Prerequisites
-    - Robotframework
-    - Java 
-    - VS Code
+# Automation Testing — Robot Framework (DemoQA Practice Form)
 
-### Clone this repository
-    https://github.com/ayuanriyani/Test_SentinelTech.git
+## Prerequisites
 
-### Before run the test , please select to location test 
-    example :   cd /Automationn-Web
-    
-## How to run test :
+- Python 3.x
+- Robot Framework (`pip install robotframework robotframework-seleniumlibrary`)
+- Browser driver for Chrome (e.g. managed by Selenium Manager / Selenium 4+)
+- Java (if required by your Selenium setup)
+
+## Clone
+
+`https://github.com/ayuanriyani/Test_SentinelTech.git`
+
+## Run from repository root
+
+Change to the project root (folder that contains `automation-web`), then run:
+
+**Staging**
+
+```text
+robot -v ENV:STAGING -v BROWSER:Chrome -i Regression automation-web/Testsuite/registrasi_student_tests.robot
 ```
-Staging --> robot -v ENV:STAGING -v BROWSER:CHROME -i [tags-name] [path]
-Dev --> robot -v ENV:DEV -v BROWSER:CHROME -i [tags-name] [path]
-e.g : robot -v ENV:STAGING -v BROWSER:CHROME -i Regression  automation-web/TestSuite/registrasi_student.robot
 
-hedless mode:
-Staging --> robot -v ENV:STAGING -v BROWSER:CHROME_HEADLESS -i [tags-name] [path]
-Dev --> robot -v ENV:DEV -v BROWSER:CHROME_HEADLESS -i [tags-name] [path]
-e.g : robot -v ENV:STAGING -v BROWSER:CHROME_HEADLESS -i Regression  automation-web/TestSuite/registrasi_student.robot
+**Dev** (same DemoQA base URL in this project; `ENV` is wired for future hosts)
 
-
-### Please See Recommandation for installed
-
-    https://robotframework.org/
-
-*For any requests or changes please open issues or create pull requests :)*
-
+```text
+robot -v ENV:DEV -v BROWSER:Chrome -i Smoke automation-web/Testsuite/registrasi_student_tests.robot
 ```
-Report :
-<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/933c42dc-f32a-4a22-afb5-9b5e0cf49964" />
 
+**Headless** (example)
+
+```text
+robot -v ENV:STAGING -v BROWSER:headlesschrome -i Regression automation-web/Testsuite/registrasi_student_tests.robot
+```
+
+Optional variables:
+
+- `ENV` — `STAGING` or `DEV` (selects `BASE_URL` in `automation-web/Resources/resources.robot`)
+- `BROWSER` — e.g. `Chrome`, `headlesschrome` (SeleniumLibrary naming)
+
+## Reports
+
+Robot writes `log.html`, `report.html`, and `output.xml` in the working directory unless you pass `--outputdir`.
+
+![Sample report](https://github.com/user-attachments/assets/933c42dc-f32a-4a22-afb5-9b5e0cf49964)
+
+## More on Robot Framework
+
+[https://robotframework.org/](https://robotframework.org/)
+
+For changes, open an issue or a pull request.
