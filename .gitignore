@@ -1,0 +1,36 @@
+/result
+
+# log
+log.html*
+output.html*
+report.html*
+
+# misc
+*.idea/
+*.settings/
+*.classpath
+*.project
+venv/
+.DS_Store
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+node_modules/*
+package-lock.json
+.vscode/*
+*.html
+*.xml
+git-robot.log*
+.github/*
+*.pyc
+*.png
+*.prn
+*.pdf
+*.zip
+*.toml
+*.code-workspace
+*.pabotsuitenames
+
+/pabot_results/
+test-fe.robot
