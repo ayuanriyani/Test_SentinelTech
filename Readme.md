@@ -29,3 +29,6 @@ e.g : robot -v ENV:STAGING -v BROWSER:CHROME_HEADLESS -i Regression  automation-
 *For any requests or changes please open issues or create pull requests :)*
 
 ```
+Report :
+<img width="700" height="700" alt="image" src="https://github.com/user-attachments/assets/933c42dc-f32a-4a22-afb5-9b5e0cf49964" />
+
