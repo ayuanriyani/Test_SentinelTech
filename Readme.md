@@ -11,6 +11,40 @@
 
 `https://github.com/ayuanriyani/Test_SentinelTech.git`
 
+## Struktur folder
+
+Struktur berikut mencerminkan isi kerja di workspace (bukan artefak lokal seperti `log.html` / `output.xml` hasil menjalankan Robot).
+
+**Catatan Git:** di `.gitignore` ada pola `*.png` dan `*.pdf`, jadi `automation-web/FileTest/bukti_transaksi_1.png` dan `Automation Test.pdf` bisa **tidak ikut** saat clone jika tidak pernah di-commit. Siapkan file tersebut secara lokal untuk tes upload, atau sesuaikan ignore jika memang harus disertakan di repo.
+
+```text
+SentinelTech-AT/
+├── .gitignore
+├── Automation Test.pdf
+├── PythonLibrary.py
+├── Readme.md
+├── run_tests.sh
+└── automation-web/
+    ├── FileTest/
+    │   └── bukti_transaksi_1.png
+    ├── PageObject/
+    │   └── Registrasi/
+    │       └── registrasi_student_page.robot
+    ├── Resources/
+    │   └── resources.robot
+    └── Testsuite/
+        └── registrasi_student_tests.robot
+```
+
+| Lokasi | Keterangan singkat |
+|--------|---------------------|
+| `automation-web/Testsuite/` | Suite tes Robot (skenario & alur). |
+| `automation-web/PageObject/` | Page Object: lokator & keyword per halaman/modul. |
+| `automation-web/Resources/` | Variabel lingkungan (`BASE_URL`, `BROWSER`, `ENV`) dan konfigurasi bersama. |
+| `automation-web/FileTest/` | Aset uji (mis. gambar untuk upload form). |
+| `run_tests.sh` | Skrip **POSIX shell** untuk **Pabot** + `args.txt` (bukan `robot` langsung). Butuh `pabot` terpisah (`pip install robotframework-pabot`). Contoh dari root repo (Git Bash / WSL / Linux): `./run_tests.sh automation-web/Testsuite/registrasi_student_tests.robot` — skrip ini memakai default `BROWSER` headless di `args.txt`; untuk menyamakan dengan perintah `robot` di bawah, override dengan `-v BROWSER:Chrome` sesuai parser skrip. |
+| `PythonLibrary.py` | Library Python umum; **suite DemoQA saat ini tidak meng-import** file ini. |
+
 ## Run from repository root
 
 Change to the project root (folder that contains `automation-web`), then run:
@@ -33,10 +67,6 @@ robot -v ENV:DEV -v BROWSER:Chrome -i Smoke automation-web/Testsuite/registrasi_
 robot -v ENV:STAGING -v BROWSER:headlesschrome -i Regression automation-web/Testsuite/registrasi_student_tests.robot
 ```
 
-Optional variables:
-
-- `ENV` — `STAGING` or `DEV` (selects `BASE_URL` in `automation-web/Resources/resources.robot`)
-- `BROWSER` — e.g. `Chrome`, `headlesschrome` (SeleniumLibrary naming)
 
 ## Reports
 
