@@ -30,7 +30,7 @@ User Student can be successfully created in registration Form
 
 User can submit practice form with required fields only
     [Documentation]    TC-002    required fields + state/city, no optional sections.
-    [Tags]    Registrasi    Positive    Smoke
+    [Tags]    Registrasi    Positive
     GIVEN User Go To Automation Form
     AND registrasi_student_page.Input Nama Student    Min
     AND registrasi_student_page.Input Last Nama Student    Required

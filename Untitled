@@ -1,0 +1,1 @@
+robot -v ENV:STAGING -v BROWSER:chrome -i Regression automation-web/Testsuite/registrasi_student_tests.robot

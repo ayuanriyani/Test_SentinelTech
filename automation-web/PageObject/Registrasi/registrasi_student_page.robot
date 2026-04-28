@@ -24,14 +24,6 @@ ${BTN_CLOSE_AFTER_sUCCESS}   //button[@id="closeLargeModal"]
 
 
 *** Keywords ***
-# _Scroll And Click
-#     [Documentation]    Scroll into view, nudge page up (DemoQA footer/ads), then native click.
-#     [Arguments]    ${locator}
-#     Wait Until Element Is Visible    ${locator}
-#     Scroll Element Into View    ${locator}
-#     Execute Javascript    window.scrollBy(0, -400)
-#     Click Element    ${locator}
-
 registrasi_student_page.Input Nama Student
     [Documentation]    nama student
     [Arguments]    ${value_name}
@@ -56,15 +48,6 @@ registrasi_student_page.Pilih Gender
     Wait Until Element Is Visible    ${GENDER_WRAPPER}    10s
     ${result_gender}    Set Variable    ${GENDER_WRAPPER}//input[@value="${pilih_gender}"]
     Click Element    ${result_gender}  
-    # IF    '${pilih_gender}' == 'Male'
-    #     _Scroll And Click    ${GENDER_WRAPPER}//input[@value="Male"]
-    # ELSE IF    '${pilih_gender}' == 'Female'
-    #     _Scroll And Click    ${GENDER_WRAPPER}//input[@value="Female"]
-    # ELSE IF    '${pilih_gender}' == 'Other'
-    #     _Scroll And Click    ${GENDER_WRAPPER}//input[@value="Other"]
-    # ELSE
-    #     Fail    Unsupported gender: ${pilih_gender}. Use Male, Female, or Other.
-    # END
 
 registrasi_student_page.Input Mobile Phone Number 
     [Documentation]    Input Phone number

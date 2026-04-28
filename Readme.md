@@ -52,7 +52,7 @@ Change to the project root (folder that contains `automation-web`), then run:
 **Staging**
 
 ```text
-robot -v ENV:STAGING -v BROWSER:Chrome -i Regression automation-web/Testsuite/registrasi_student_tests.robot
+robot -v ENV:STAGING -v BROWSER:chrome -i Regression automation-web/Testsuite/registrasi_student_tests.robot
 ```
 
 **Dev** (same DemoQA base URL in this project; `ENV` is wired for future hosts)
