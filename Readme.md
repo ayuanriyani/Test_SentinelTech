@@ -74,6 +74,12 @@ Robot writes `log.html`, `report.html`, and `output.xml` in the working director
 
 ![Sample report](https://github.com/user-attachments/assets/933c42dc-f32a-4a22-afb5-9b5e0cf49964)
 
+
+
+https://github.com/user-attachments/assets/0b44396a-9a33-4d00-bcce-d656211b4dd2
+
+
+
 ## More on Robot Framework
 
 [https://robotframework.org/](https://robotframework.org/)
